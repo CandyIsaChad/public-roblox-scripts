@@ -1,1 +1,1 @@
-# public-roblox-scripts
+Those are my Public Roblox scripts, some are obfuscated, others aren't. Also, please don't judge me for my bad code, thanks.
