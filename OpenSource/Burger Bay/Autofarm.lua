@@ -102,8 +102,10 @@ while getgenv().ok do if(not getgenv().ok) then break end
 	wait(.4);
 end
 
+--[[
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
     if State == Enum.TeleportState.Started then
         syn.queue_on_teleport("wait(10); loadstring(game:HttpGet('https://raw.githubusercontent.com/SirShine/public-roblox-scripts/main/OpenSource/Burger%20Bay/Autofarm.lua', true))();")
     end
 end)
+--]]
