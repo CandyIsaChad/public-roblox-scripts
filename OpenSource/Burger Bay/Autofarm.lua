@@ -2,7 +2,7 @@ local VIM = game:GetService("VirtualInputManager");
 local plr = game:GetService("Players").LocalPlayer;
 local plrchr = plr.Character or plr.CharacterAdded:Wait();
 local plrgui = plr.PlayerGui;
-local mainmenucontainer = plrgui:WaitForChild("screens")["main_menu"]:WaitForChild("container");
+local mainmenucontainer = plrgui:WaitForChild("screens")["main_menu"].container;
 
 local mainMenuDone = false;
 local jobSelectDone = false;
@@ -35,20 +35,20 @@ while getgenv().ok do if(not getgenv().ok) then break end
 
 	-- [[
 	if(true) then
-		if(mainmenucontainer:WaitForChild("holder").AbsolutePosition.Y < 100 and not mainMenuDone) then
+		if(mainmenucontainer.holder.AbsolutePosition.Y < 100 and not mainMenuDone) then
 			Click(mainmenucontainer.holder.play);
 			wait(1);
-			if(mainmenucontainer:WaitForChild("holder").AbsolutePosition.Y > 100 and not mainMenuDone) then
+			if(mainmenucontainer.holder.AbsolutePosition.Y > 100 and not mainMenuDone) then
 				mainMenuDone = true;
 			end
 		end
 
-		if(mainmenucontainer:WaitForChild("house_select").AbsolutePosition.Y < 200) then
+		if(mainmenucontainer["house_select"].AbsolutePosition.Y < 200) then
 			Click(mainmenucontainer["house_select"].container.select.right.bottom["select_button"]);
 			wait(1);
 		end
 
-		if(mainmenucontainer:WaitForChild("plot_select").AbsolutePosition.Y < 200) then
+		if(mainmenucontainer["plot_select"].AbsolutePosition.Y < 200) then
 			if(isPremium == true) then
 				Click(mainmenucontainer["plot_select"]["premium_holder"]["select_button"]);
 				wait(3);
@@ -58,7 +58,7 @@ while getgenv().ok do if(not getgenv().ok) then break end
 			end
 		end
 
-		if(mainmenucontainer:WaitForChild("holder").AbsolutePosition.Y < 100 and mainMenuDone and not jobSelectDone) then
+		if(mainmenucontainer.holder.AbsolutePosition.Y < 100 and mainMenuDone and not jobSelectDone) then
 			Click(plrgui.screens["job_selection"].holder["select_button"]);
 			jobSelectDone = true;
 			wait(3);
@@ -74,7 +74,7 @@ while getgenv().ok do if(not getgenv().ok) then break end
 	end
 --]]
 
-    if(plrchr:WaitForChild("UpperTorso").Transparency == 0) then
+    if(plrchr.UpperTorso.Transparency == 0) then
         plrchr:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-1213.05835, 8.25830269, -24.1128159, -0.000407375424, -7.29586276e-08, -0.99999994, -3.1481445e-08, 1, -7.29458094e-08, 0.99999994, 3.14517266e-08, -0.000407375424)
         wait()
         VIM:SendKeyEvent(true, "E", false, game);
