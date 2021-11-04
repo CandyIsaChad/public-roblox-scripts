@@ -91,9 +91,7 @@ while getgenv().ok do if(not getgenv().ok) then break end
 	
 	if(not plrchr:FindFirstChild("delivery_bag") and jobSelectDone) then
 		plrchr:WaitForChild("HumanoidRootPart").CFrame = game:GetService("Workspace")["delivery_bags"]:WaitForChild("delivery_bag").CFrame;
-		wait(.1);
 		VIM:SendKeyEvent(true, "E", false, game);
-		wait(.1);
 		VIM:SendKeyEvent(false, "E", false, game);
     elseif(plrchr:FindFirstChild("delivery_bag") and jobSelectDone) then
 		plrchr:WaitForChild("HumanoidRootPart").CFrame = plrchr:WaitForChild("delivery_bag"):WaitForChild("house").Value:WaitForChild("complete_region").CFrame;
