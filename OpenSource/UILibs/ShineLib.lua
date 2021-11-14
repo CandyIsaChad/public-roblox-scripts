@@ -255,6 +255,27 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			end)
 		end
 
+		function ElementHandle:AddLabel(name)
+			name = name or "";
+
+			local newLabel = Instance.new("TextLabel")
+			local newLabelCorner = Instance.new("UICorner")
+
+			newLabel.Name = "newLabel"
+			newLabel.Parent = game.StarterGui.ShineLib.MainFrame.PagesFrame.pages.newPage
+			newLabel.BackgroundColor3 = accentColor
+			newLabel.Size = UDim2.new(0, 379, 0, 50)
+			newLabel.Font = Enum.Font.Gotham
+			newLabel.Text = name
+			newLabel.TextColor3 = textColor
+			newLabel.TextSize = 14.000
+
+			newLabelCorner.CornerRadius = UDim.new(0, 5)
+			newLabelCorner.Name = "newLabelCorner"
+			newLabelCorner.Parent = newLabel
+
+		end
+
 		newTab.MouseButton1Click:Connect(function()
 			for _, v in next, pages:GetChildren() do
 				v.Visible = false;
