@@ -176,6 +176,7 @@ function WindowHandle:Create(uiname, accentColor, scale)
 
 		function ElementHandle:AddToggle(name, default, callback)
 			name = name or "Unnamed Toggle";
+			default = _if(type(default) == "boolean", default, false);
 			callback = callback or function() end;
 
 			local newToggle = Instance.new("TextButton")
@@ -217,7 +218,7 @@ function WindowHandle:Create(uiname, accentColor, scale)
 
 			toggleInnerCircle.Name = "toggleInnerCircle"
 			toggleInnerCircle.Parent = toggleCircle
-			toggleInnerCircle.BackgroundColor3 = accentColor
+			toggleInnerCircle.BackgroundColor3 = _if(default, Color3.new(1, 0, 1), Color3.fromRGB(26, 26, 26))
 			toggleInnerCircle.Position = UDim2.new(0, 4, 0, 4)
 			toggleInnerCircle.Size = UDim2.new(0, 20, 0, 20)
 
@@ -299,6 +300,10 @@ function WindowHandle:Create(uiname, accentColor, scale)
 		end)
 
 		return ElementHandle;
+	end
+
+	function TabHandle:Destroy()
+		game.CoreGui:FindFirstChild("ShineLib"):Destroy();
 	end
 
 	function TabHandle:ToggleUI()
