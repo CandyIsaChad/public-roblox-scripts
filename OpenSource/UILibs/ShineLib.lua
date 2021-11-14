@@ -262,7 +262,7 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			local newLabelCorner = Instance.new("UICorner")
 
 			newLabel.Name = "newLabel"
-			newLabel.Parent = game.StarterGui.ShineLib.MainFrame.PagesFrame.pages.newPage
+			newLabel.Parent = newPage
 			newLabel.BackgroundColor3 = accentColor
 			newLabel.Size = UDim2.new(0, 379, 0, 50)
 			newLabel.Font = Enum.Font.Gotham
