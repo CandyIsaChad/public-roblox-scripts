@@ -193,6 +193,7 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			newToggle.BackgroundColor3 = accentColor
 			newToggle.Position = UDim2.new(0.0201005023, 0, 0.021428572, 0)
 			newToggle.Size = UDim2.new(0, 379, 0, 50)
+			newToggle.ZIndex = 100
 			newToggle.Font = Enum.Font.Gotham
 			newToggle.Text = ""
 			newToggle.TextColor3 = textColor
@@ -206,8 +207,8 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			toggleCircle.Name = "toggleCircle"
 			toggleCircle.Parent = newToggle
 			toggleCircle.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-			toggleCircle.Position = UDim2.new(0, 6, 0, 6)
-			toggleCircle.Size = UDim2.new(0, 49, 0, 38)
+			toggleCircle.Position = UDim2.new(0, 11, 0, 11)
+			toggleCircle.Size = UDim2.new(0, 39, 0, 28)
 
 			UICorner.CornerRadius = UDim.new(10, 0)
 			UICorner.Parent = toggleCircle
@@ -216,9 +217,9 @@ function WindowHandle:Create(uiname, accentColor, scale)
 
 			toggleInnerCircle.Name = "toggleInnerCircle"
 			toggleInnerCircle.Parent = toggleCircle
-			toggleInnerCircle.BackgroundColor3 = _if(default, accentColor, Color3.fromRGB(26, 26, 26))
+			toggleInnerCircle.BackgroundColor3 = accentColor
 			toggleInnerCircle.Position = UDim2.new(0, 4, 0, 4)
-			toggleInnerCircle.Size = UDim2.new(0, 30, 0, 30)
+			toggleInnerCircle.Size = UDim2.new(0, 20, 0, 20)
 
 			UICorner_2.CornerRadius = UDim.new(10, 0)
 			UICorner_2.Parent = toggleInnerCircle
@@ -226,11 +227,12 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			UIAspectRatioConstraint_2.Parent = toggleInnerCircle
 
 			TextLabel.Parent = newToggle
+			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			TextLabel.BackgroundTransparency = 1.000
 			TextLabel.Position = UDim2.new(0.137203172, 0, 0, 0)
 			TextLabel.Size = UDim2.new(0, 325, 0, 49)
 			TextLabel.Font = Enum.Font.Gotham
-			TextLabel.Text = name
+			TextLabel.Text = "Unnamed Toggle"
 			TextLabel.TextColor3 = textColor
 			TextLabel.TextSize = 14.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
