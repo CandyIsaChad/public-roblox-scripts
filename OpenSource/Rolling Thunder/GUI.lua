@@ -43,6 +43,13 @@ end)
 -- end)
 
 -- Misc Tab
+MiscTab:AddLabel("Infinite Ammo starts Damaging you");
+MiscTab:AddLabel("after emptying the mag you normally would have");
+MiscTab:AddLabel("unless you wait a little between every shot.");
+MiscTab:AddLabel("I left it in because it's still good for");
+MiscTab:AddLabel("Snipers and the China Lake.");
+
+
 MiscTab:AddToggle("Infinite Ammo and No Recoil", false, function(bool)
 
     getgenv().infammo = bool;
