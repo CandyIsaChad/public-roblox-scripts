@@ -233,7 +233,7 @@ function WindowHandle:Create(uiname, accentColor, scale)
 			TextLabel.Position = UDim2.new(0.137203172, 0, 0, 0)
 			TextLabel.Size = UDim2.new(0, 325, 0, 49)
 			TextLabel.Font = Enum.Font.Gotham
-			TextLabel.Text = "Unnamed Toggle"
+			TextLabel.Text = name
 			TextLabel.TextColor3 = textColor
 			TextLabel.TextSize = 14.000
 			TextLabel.TextXAlignment = Enum.TextXAlignment.Left
